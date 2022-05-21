@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testaCliente" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-21T14:19:36" hostname="HCGB-PC1" time="4.327">
+  <properties/>
+  <testcase name="Quando eu pegar um cliente especifico, entao ele deve aparecer cadastrado" classname="testaCliente" time="3.668"/>
+  <testcase name="Quando eu pegar a lista de clientes depois de cadastrar, entao a lista deve mostrar os clientes cadastrados" classname="testaCliente" time="0.223"/>
+  <testcase name="Quando  atualizar um cliente, entao ele deve estar com os dados atualizados" classname="testaCliente" time="0.136"/>
+  <testcase name="Quando cadastrar um cliente, entao ele deve estar disponivel no resultado" classname="testaCliente" time="0.162"/>
+  <testcase name="Quando eu deletar um cliente especifico, entao ele nao deve estar mais na lista de clientes." classname="testaCliente" time="0.128"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
