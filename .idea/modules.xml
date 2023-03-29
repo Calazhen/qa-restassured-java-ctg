@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Automation-Test-API.iml" filepath="$PROJECT_DIR$/.idea/Automation-Test-API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestaClienteApi.iml" filepath="$PROJECT_DIR$/.idea/modules/TestaClienteApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestaClienteApi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TestaClienteApi.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestaClienteApi.test.iml" filepath="$PROJECT_DIR$/.idea/modules/TestaClienteApi.test.iml" />
     </modules>
   </component>
 </project>

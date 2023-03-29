@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.sling:org.apache.sling.javax.activation:0.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sling/org.apache.sling.javax.activation/0.1.0/606ef790ce33d9cd6b892c47cc2a9508efc57698/org.apache.sling.javax.activation-0.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sling/org.apache.sling.javax.activation/0.1.0/731288ff4a1bce8f7462262f2d29039b2a10a55/org.apache.sling.javax.activation-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
