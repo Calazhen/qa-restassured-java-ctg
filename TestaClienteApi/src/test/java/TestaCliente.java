@@ -1,267 +1,154 @@
 import io.restassured.http.ContentType;
-import org.hamcrest.core.IsEqual;
-import org.junit.jupiter.api.BeforeEach;
+
+import io.restassured.response.ValidatableResponse;
+import org.apache.http.HttpStatus;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.containsString;
 
-public class testaCliente {
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.Matchers.contains;
 
-    String baseURL = "http://localhost:8080";
-    String endPointCliente = "/cliente";
-    String urlClienteRisco = "/risco/11";
-    String idCliente = "/1002";
-
-    String apagaTodosClientes = "/apagaTodos";
+import org.hamcrest.core.IsEqual;
 
 
-    @BeforeEach
-    public void deletarTodosClientes() {
+public class TestaCliente {
 
-        String clienteCadastrado = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-        String clienteCadastrado2 = "{\n" +
-                "  \"id\": 1003,\n" +
-                "  \"idade\": 29,\n" +
-                "  \"nome\": \"Donnald\",\n" +
-                "  \"risco\": 5\n" +
-                "}";
+    private static final String SERVICO_CLIENTE = "http://localhost:8080";
+    private static final String RECURSO_CLIENTE = "/cliente";
+    private static final String APAGA_TODOS_CLIENTES = "/apagaTodos";
+    private static final String RISCO = "/risco/";
+    private static final String LISTA_CLIENTES_VAZIA = "{}";
 
-        String respostaEsperada = "{}";
+    @Test
+    @DisplayName("Quando eu requisitar a lista de clientes sem adicionar clientes antes, Então ela deve estar vazia")
+    public void quandoRequisitarListaClientesSemAdicionar_EntaoElaDeveEstarVazia() {
 
+        apagaTodosClientesDoServidor();
 
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .post(baseURL + endPointCliente);
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado2)
-                .when()
-                .post(baseURL + endPointCliente);
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado);
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado2)
-                .when()
-                .delete(baseURL + endPointCliente);
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .delete(baseURL + endPointCliente + apagaTodosClientes)
-                .then()
-                .statusCode(200)
-                .assertThat().body(containsString(respostaEsperada));
-
-
+        pegaTodosClientes()
+                .statusCode(HttpStatus.SC_OK)
+                .body(equalTo(LISTA_CLIENTES_VAZIA));
     }
 
     @Test
-    @DisplayName("Quando eu pegar a lista de clientes depois de cadastrar, entao a lista deve mostrar os clientes cadastrados")
-    public void consultarTodosClientes() {
+    @DisplayName("Quando eu cadastrar um cliente, Então ele deve ser salvo com sucesso")
+    public void quandoCadastrarCliente_EntaoEleDeveSerSalvoComSucesso() {
 
-        String clienteCadastrado1 = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-        String clienteCadastrado2 = "{\n" +
-                "  \"id\": 1003,\n" +
-                "  \"idade\": 29,\n" +
-                "  \"nome\": \"Donnald\",\n" +
-                "  \"risco\": 5\n" +
-                "}";
-        String respostaEsperada = "{\"1002\":{\"nome\":\"Minnie Mouse\",\"idade\":25,\"id\":1002,\"risco\":0},\"1003\":{\"nome\":\"Donnald\",\"idade\":29,\"id\":1003,\"risco\":5}}";
+        Cliente clienteParaCadastrar = new Cliente("Vinny", 31,10101 );
 
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado1)
-                .when()
-                .post(baseURL + endPointCliente);
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado2)
-                .when()
-                .post(baseURL + endPointCliente);
-
-
-        given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(baseURL)
-
-                .then()
-                .statusCode(200)
-                .assertThat().body(new IsEqual<>(respostaEsperada));
-
+        postaCliente(clienteParaCadastrar)
+                .statusCode(HttpStatus.SC_CREATED)
+                .body("10101.nome", equalTo("Vinny"))
+                .body("10101.idade", equalTo(31))
+                .body("10101.id", equalTo(10101));
     }
 
     @Test
-    @DisplayName("Quando eu pegar um cliente especifico, entao ele deve aparecer cadastrado")
-    public void consultarClienteEspecifico() {
+    @DisplayName("Quando eu atualizar um cliente, Então ele deve ser atualizado com sucesso")
+    public void quandoAtualizarCliente_EntaoEleDeveSerAtualizadoComSucesso() {
 
-        String clienteCadastrado = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
+        Cliente clienteParaCadastrar = new Cliente("Mickey", 67, 40101);
 
-        String respostaEsperada = "{\"nome\":\"Minnie Mouse\",\"idade\":25,\"id\":1002,\"risco\":0}";
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .post(baseURL + endPointCliente);
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
+        postaCliente(clienteParaCadastrar);
 
-                .when()
-                .get(baseURL + endPointCliente + idCliente)
-                .then()
-                .statusCode(200)
-                .assertThat().body(new IsEqual<>(respostaEsperada));
+        clienteParaCadastrar.setNome("Mickey, Mouse");
+        clienteParaCadastrar.setIdade(85);
+        clienteParaCadastrar.setId(40101);
 
-
+        atualizaCliente(clienteParaCadastrar)
+                .statusCode(HttpStatus.SC_OK)
+                .body("40101.id", equalTo(40101))
+                .body("40101.nome", equalTo("Mickey, Mouse"))
+                .body("40101.idade", equalTo(85));
     }
 
     @Test
-    @DisplayName("Quando eu pegar um cliente pelo risco, entao ele deve aparecer cadastrado informando o campo risco")
-    public void consultarClienteRisco() {
+    @DisplayName("Quando eu deletar um cliente, Então ele deve ser removido com sucesso")
+    public void quandoDeletarCliente_EntaoEleDeveSerDeletadoComSucesso() {
 
-        String clienteCadastrado = "{\n" +
-                "  \"id\": 11,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 15\n" +
-                "}";
+        // Arrange
+        Cliente cliente = new Cliente("Tio Patinhas", 89, 40101);
 
-        String respostaEsperada = "{\"nome\":\"Minnie Mouse\",\"idade\":25,\"id\":11,\"risco\":-15}";
+        // Act
+        postaCliente(cliente);
 
+        // Act/Assert
+        apagaCliente(cliente)
+                .statusCode(HttpStatus.SC_OK)
+                .assertThat().body(not(contains("Tio Patinhas")));
+    }
 
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .post(baseURL + endPointCliente);
+    @Test
+    @DisplayName("Quando eu solicitar o risco de um cliente com credenciais válidas, Então ele deve ser retornado com sucesso")
+    public void quandoSolicitarRiscoComAutorizacao () {
+
+        Cliente cliente = new Cliente("Mickey Mouse", 32, 220389);
+
+        int riscoEsperado = - 50;
+
+        postaCliente(cliente);
 
         given()
                 .auth()
                 .basic("aluno", "senha")
-
                 .when()
-                .get(baseURL + urlClienteRisco)
+                .get(SERVICO_CLIENTE+RISCO+cliente.getId())
                 .then()
-                .statusCode(200)
-                .assertThat().body(new IsEqual<>(respostaEsperada));
-
-
-    }
-
-    @Test
-    @DisplayName("Quando cadastrar um cliente, entao ele deve estar disponivel no resultado")
-    public void cadastrarClientes() {
-
-
-        String clienteParaCadastrar = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-        String respostaEsperada = "{\"1002\":{\"nome\":\"Minnie Mouse\",\"idade\":25,\"id\":1002,\"risco\":0}}";
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteParaCadastrar)
-                .when()
-                .post(baseURL + endPointCliente)
-
-                .then()
-                .statusCode(201)
-                .assertThat().body(containsString(respostaEsperada));
-    }
-
-    @Test
-    @DisplayName("Quando  atualizar um cliente, entao ele deve estar com os dados atualizados")
-    public void atualizarClientes() {
-
-
-        String clienteCadastrado = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-        String clienteParaCadastrar = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 28,\n" +
-                "  \"nome\": \"Mickey Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-        String clienteAtualizado = "{\"1002\":{\"nome\":\"Mickey Mouse\",\"idade\":28,\"id\":1002,\"risco\":0}}";
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .post(baseURL + endPointCliente);
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteParaCadastrar)
-                .when()
-                .put(baseURL + endPointCliente)
-
-
-                .then()
-                .statusCode(200)
-                .assertThat().body(containsString(clienteAtualizado));
-    }
-
-    @Test
-    @DisplayName("Quando eu deletar um cliente especifico, entao ele nao deve estar mais na lista de clientes.")
-    public void deletarClienteEspecifico() {
-
-
-        String clienteCadastrado = "{\n" +
-                "  \"id\": 1002,\n" +
-                "  \"idade\": 25,\n" +
-                "  \"nome\": \"Minnie Mouse\",\n" +
-                "  \"risco\": 0\n" +
-                "}";
-
-        String respostaEsperada = "CLIENTE REMOVIDO: { NOME: Minnie Mouse, IDADE: 25, ID: 1002 }";
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .post(baseURL + endPointCliente);
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(clienteCadastrado)
-                .when()
-                .delete(baseURL + endPointCliente + idCliente)
-                .then()
-                .statusCode(200)
-                .assertThat().body(containsString(respostaEsperada));
+                .assertThat()
+                .statusCode(HttpStatus.SC_OK).body("risco", equalTo(riscoEsperado));
     }
 
 
+
+    private ValidatableResponse postaCliente (Cliente clienteParaPostar)  {
+        return given()
+                .contentType(ContentType.JSON)
+                .body(clienteParaPostar)
+                .when().
+                post(SERVICO_CLIENTE + RECURSO_CLIENTE)
+                .then();
+    }
+
+    private ValidatableResponse atualizaCliente (Cliente clienteParaAtualizar) {
+        return given()
+                .contentType(ContentType.JSON)
+                .body(clienteParaAtualizar).
+                when().
+                put(SERVICO_CLIENTE + RECURSO_CLIENTE).
+                then();
+    }
+
+
+    private ValidatableResponse apagaCliente (Cliente clienteApagar) {
+        return  given()
+                .contentType(ContentType.JSON)
+                .when()
+                .delete(SERVICO_CLIENTE + RECURSO_CLIENTE + "/" + clienteApagar.getId())
+                .then();
+    }
+
+
+    private ValidatableResponse pegaTodosClientes () {
+        return  given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get(SERVICO_CLIENTE)
+                .then();
+    }
+
+
+    @AfterEach
+    private void apagaTodosClientesDoServidor(){
+
+        when()
+                .delete(SERVICO_CLIENTE + RECURSO_CLIENTE + APAGA_TODOS_CLIENTES)
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .assertThat().body(new IsEqual(LISTA_CLIENTES_VAZIA));
+    }
 }

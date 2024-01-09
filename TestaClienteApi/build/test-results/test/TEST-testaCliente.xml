@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testaCliente" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-03-29T00:21:29" hostname="CALAZANSH" time="2.284">
+<testsuite name="TestaCliente" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-01-09T22:44:21" hostname="DESKTOP-1F4VJUE" time="2.588">
   <properties/>
-  <testcase name="Quando eu pegar um cliente especifico, entao ele deve aparecer cadastrado" classname="testaCliente" time="1.735"/>
-  <testcase name="Quando eu pegar a lista de clientes depois de cadastrar, entao a lista deve mostrar os clientes cadastrados" classname="testaCliente" time="0.146"/>
-  <testcase name="Quando  atualizar um cliente, entao ele deve estar com os dados atualizados" classname="testaCliente" time="0.089"/>
-  <testcase name="Quando cadastrar um cliente, entao ele deve estar disponivel no resultado" classname="testaCliente" time="0.044"/>
-  <testcase name="Quando eu pegar um cliente pelo risco, entao ele deve aparecer os dados do cliente incluindo o risco" classname="testaCliente" time="0.206"/>
-  <testcase name="Quando eu deletar um cliente especifico, entao ele nao deve estar mais na lista de clientes." classname="testaCliente" time="0.059"/>
+  <testcase name="Quando eu solicitar o risco de um cliente com credenciais vÃ¡lidas, EntÃ£o ele deve ser retornado com sucesso" classname="TestaCliente" time="2.245"/>
+  <testcase name="Quando eu deletar um cliente, EntÃ£o ele deve ser removido com sucesso" classname="TestaCliente" time="0.06"/>
+  <testcase name="Quando eu atualizar um cliente, EntÃ£o ele deve ser atualizado com sucesso" classname="TestaCliente" time="0.106"/>
+  <testcase name="Quando eu requisitar a lista de clientes sem adicionar clientes antes, EntÃ£o ela deve estar vazia" classname="TestaCliente" time="0.104"/>
+  <testcase name="Quando eu cadastrar um cliente, EntÃ£o ele deve ser salvo com sucesso" classname="TestaCliente" time="0.07"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
