@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: ru.qatools.commons:properties:2.0.RC5" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="ru.qatools.commons" artifactId="properties" version="2.0.RC5" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ru.qatools.commons/properties/2.0.RC5/9c90f0e4211aedcc39c18cd77b2268ddb6563bad/properties-2.0.RC5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ru.qatools.commons/properties/2.0.RC5/aed833bdb24c263fdacdda5e9b51163507fb4f63/properties-2.0.RC5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

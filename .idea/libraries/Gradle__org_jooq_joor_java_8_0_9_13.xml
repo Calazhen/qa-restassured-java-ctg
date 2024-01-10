@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jooq:joor-java-8:0.9.13" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.jooq" artifactId="joor-java-8" version="0.9.13" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jooq/joor-java-8/0.9.13/1677bb842125415a40041e000200af8e76b2deff/joor-java-8-0.9.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jooq/joor-java-8/0.9.13/f707fa130739b50f361e7a22426a6134efc8ab80/joor-java-8-0.9.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

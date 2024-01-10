@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.qameta.allure:allure-commandline:2.12.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.qameta.allure" artifactId="allure-commandline" version="2.12.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-commandline/2.12.1/fd79bcc7afcc67cbe0d4ee3b717fb4f37824b96b/allure-commandline-2.12.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-commandline/2.12.1/ebaa469490dd25846a5fe5a54e543705a57eece7/allure-commandline-2.12.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

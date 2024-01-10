@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.allurefw:allure1-model:1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.allurefw" artifactId="allure1-model" version="1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.allurefw/allure1-model/1.0/cfd4d328364a7736448e42f088b53b5b8fb1c09d/allure1-model-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.allurefw/allure1-model/1.0/9427a7625b28ae92108752ec2845559904d480c3/allure1-model-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

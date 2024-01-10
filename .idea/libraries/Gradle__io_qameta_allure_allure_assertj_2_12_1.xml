@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.qameta.allure:allure-assertj:2.12.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.qameta.allure" artifactId="allure-assertj" version="2.12.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-assertj/2.12.1/7d7c8a51e12f08425c5ac1dd103a807a80d7cfa1/allure-assertj-2.12.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-assertj/2.12.1/b9bed5c2834f2babb533c052b4865f8b25c90ab2/allure-assertj-2.12.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "DESKTOP-1F4VJUE",
+    "children" : [ {
+      "name" : "5004@DESKTOP-1F4VJUE.Test worker(12)",
+      "children" : [ {
+        "name" : "Quando eu deletar um cliente, EntÃ£o ele deve ser removido com sucesso",
+        "uid" : "f0040cea70be6509",
+        "parentUid" : "d19549ed726cea9e8c8c0e9172ba2734",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704878196702,
+          "stop" : 1704878196799,
+          "duration" : 97
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Quando eu requisitar a lista de clientes sem adicionar clientes antes, EntÃ£o ela deve estar vazia",
+        "uid" : "cf14fd5908f2885f",
+        "parentUid" : "d19549ed726cea9e8c8c0e9172ba2734",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704878196982,
+          "stop" : 1704878197222,
+          "duration" : 240
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Quando eu cadastrar um cliente, EntÃ£o ele deve ser salvo com sucesso",
+        "uid" : "9b7b17dc9062a50c",
+        "parentUid" : "d19549ed726cea9e8c8c0e9172ba2734",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704878197229,
+          "stop" : 1704878197350,
+          "duration" : 121
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Quando eu solicitar o risco de um cliente com credenciais vÃ¡lidas, EntÃ£o ele deve ser retornado com sucesso",
+        "uid" : "bf4eb2f4e8c50bd0",
+        "parentUid" : "d19549ed726cea9e8c8c0e9172ba2734",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704878191270,
+          "stop" : 1704878196615,
+          "duration" : 5345
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Quando eu atualizar um cliente, EntÃ£o ele deve ser atualizado com sucesso",
+        "uid" : "fe79d18ec434c770",
+        "parentUid" : "d19549ed726cea9e8c8c0e9172ba2734",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704878196805,
+          "stop" : 1704878196974,
+          "duration" : 169
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d19549ed726cea9e8c8c0e9172ba2734"
+    } ],
+    "uid" : "f9ca0d0031922248d686c4331316a3ad"
+  } ],
+  "name" : "timeline"
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.baev:jaxb-utils:1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.baev" artifactId="jaxb-utils" version="1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.baev/jaxb-utils/1.0/7463f66662f5bc4ea6e61de04bfccfafe6125d67/jaxb-utils-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.baev/jaxb-utils/1.0/f32ccd8b4d6632b712b8038e6b036f4c43a46889/jaxb-utils-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

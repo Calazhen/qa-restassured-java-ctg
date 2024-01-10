@@ -1,0 +1,72 @@
+{
+  "uid" : "bf4eb2f4e8c50bd0",
+  "name" : "Quando eu solicitar o risco de um cliente com credenciais vÃ¡lidas, EntÃ£o ele deve ser retornado com sucesso",
+  "fullName" : "TestaCliente.quandoSolicitarRiscoComAutorizacao",
+  "historyId" : "ba647448ca4d784428d8654578519fc1",
+  "time" : {
+    "start" : 1704878191270,
+    "stop" : 1704878196615,
+    "duration" : 5345
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ {
+    "name" : "apagaTodosClientesDoServidor",
+    "time" : {
+      "start" : 1704878196373,
+      "stop" : 1704878196596,
+      "duration" : 223
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-1F4VJUE"
+  }, {
+    "name" : "thread",
+    "value" : "5004@DESKTOP-1F4VJUE.Test worker(12)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "testClass",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "testMethod",
+    "value" : "quandoSolicitarRiscoComAutorizacao"
+  }, {
+    "name" : "suite",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "bf4eb2f4e8c50bd0.json",
+  "parameterValues" : [ ]
+}

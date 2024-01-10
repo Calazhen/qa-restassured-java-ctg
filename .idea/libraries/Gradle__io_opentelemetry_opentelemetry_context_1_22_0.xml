@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.opentelemetry:opentelemetry-context:1.22.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.opentelemetry" artifactId="opentelemetry-context" version="1.22.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.22.0/a608c85a1430449ef190abb8d726ae3236ab137e/opentelemetry-context-1.22.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.22.0/5339248178bfe42aad11393f25d7ae60714a5371/opentelemetry-context-1.22.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,72 @@
+{
+  "uid" : "fe79d18ec434c770",
+  "name" : "Quando eu atualizar um cliente, EntÃ£o ele deve ser atualizado com sucesso",
+  "fullName" : "TestaCliente.quandoAtualizarCliente_EntaoEleDeveSerAtualizadoComSucesso",
+  "historyId" : "692b08b2c50f123d447f7c29628035b3",
+  "time" : {
+    "start" : 1704878196805,
+    "stop" : 1704878196974,
+    "duration" : 169
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ {
+    "name" : "apagaTodosClientesDoServidor",
+    "time" : {
+      "start" : 1704878196962,
+      "stop" : 1704878196974,
+      "duration" : 12
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-1F4VJUE"
+  }, {
+    "name" : "thread",
+    "value" : "5004@DESKTOP-1F4VJUE.Test worker(12)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "testClass",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "testMethod",
+    "value" : "quandoAtualizarCliente_EntaoEleDeveSerAtualizadoComSucesso"
+  }, {
+    "name" : "suite",
+    "value" : "TestaCliente"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fe79d18ec434c770.json",
+  "parameterValues" : [ ]
+}

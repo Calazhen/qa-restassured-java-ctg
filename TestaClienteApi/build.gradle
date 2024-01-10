@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'idea' // optional (to generate IntelliJ IDEA project files)
+    id 'io.qameta.allure' version '2.10.0'
+
 }
 
 group 'org.example'
@@ -15,17 +17,32 @@ repositories {
 dependencies {
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.1'
 
+    testImplementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.12.1'
+    implementation group: 'io.qameta.allure', name: 'allure-assertj', version: '2.12.1'
+
+    implementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.12.1'
+    implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: '2.12.1'
+    testImplementation("com.codeborne:selenide:6.11.2")
+
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+    implementation group: 'io.qameta.allure', name: 'allure-commandline', version: '2.12.1'
+
+    implementation('io.qameta.allure:allure-okhttp3:2.12.1')
 
 }
+
 
 test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
     }
+
+
     compileJava.options.encoding = 'UTF-8'
 
 }

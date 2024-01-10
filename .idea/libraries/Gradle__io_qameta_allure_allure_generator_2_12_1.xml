@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.qameta.allure:allure-generator:2.12.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.qameta.allure" artifactId="allure-generator" version="2.12.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-generator/2.12.1/dbd192b1e3e745b0de9feb5e2787d67653ccac55/allure-generator-2.12.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-generator/2.12.1/d1c051ca84f323ae6ff9f1049a2ea8ef3eb3a09d/allure-generator-2.12.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

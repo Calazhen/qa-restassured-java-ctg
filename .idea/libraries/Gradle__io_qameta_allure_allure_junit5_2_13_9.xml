@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.qameta.allure:allure-junit5:2.13.9" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.qameta.allure" artifactId="allure-junit5" version="2.13.9" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-junit5/2.13.9/25de92f6e1bdb6086df52d40bb827bb84d7e6d92/allure-junit5-2.13.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-junit5/2.13.9/a4e955f40da146e794275e386947ba60a7933a55/allure-junit5-2.13.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
